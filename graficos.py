@@ -111,7 +111,7 @@ def graficos_filtrar_categorias():
             print(f"{numero}: {categoria}")
         numero_categoria = int(input("Escolha o número correspondente à categoria desejada: "))
         if numero_categoria in categorias.values():
-            filtro = [categoria for categoria, numero in categorias.items() if numero == numero_categoria][0]
+            filtro = [categoria for categoria, numero in categorias.items() if numero == numero_categoria][0].upper()
             
         total_meses = fc.total_filtro_categoria(excel_data, meses, filtro)
         df_meses = pd.DataFrame({'Mês': meses, 'Total': total_meses,})
